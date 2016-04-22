@@ -4,12 +4,13 @@ Summary:	Eventum SCM integration
 Summary(pl.UTF-8):	Integracja SCM dla Eventum
 Name:		eventum-scm
 Version:	3.1.0
-Release:	0.4
+Release:	0.5
 License:	GPL v2+
 Group:		Networking/Utilities
 #Source0:	https://github.com/eventum/scm/archive/v%{version}/%{name}-%{version}.tar.gz
 Source0:	https://github.com/eventum/scm/archive/a44a17d/%{name}-%{version}.tar.gz
 # Source0-md5:	4e93c08549ee6b3749127fe0bdbea40a
+Patch0:		paths.patch
 URL:		https://github.com/eventum/scm
 BuildRequires:	/usr/bin/php
 BuildRequires:	php(core) >= %{php_min_version}
@@ -27,7 +28,7 @@ Suggests:	subversion
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc/eventum
+%define		_libdir		%{_prefix}/lib
 
 %description
 This feature allows your software development teams to integrate your
@@ -53,11 +54,12 @@ Szczegóły na temat instalacji można przeczytać pod
 %prep
 %setup -qc
 mv scm-*/* .
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sbindir}
-cp -p helpers.php $RPM_BUILD_ROOT%{_sbindir}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir}}
+cp -p helpers.php $RPM_BUILD_ROOT%{_libdir}/eventum-scm-helpers.php
 for a in eventum-*-hook.php; do
 	f=${a%.php}
 	install -p $a $RPM_BUILD_ROOT%{_sbindir}/$f
@@ -71,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/eventum-cvs-hook
 %attr(755,root,root) %{_sbindir}/eventum-git-hook
 %attr(755,root,root) %{_sbindir}/eventum-svn-hook
-%attr(755,root,root) %{_sbindir}/helpers.php
+%{_libdir}/eventum-scm-helpers.php
