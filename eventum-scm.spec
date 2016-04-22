@@ -70,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README.md CHANGELOG.md
 %attr(755,root,root) %{_sbindir}/eventum-cvs-hook
 %attr(755,root,root) %{_sbindir}/eventum-git-hook
 %attr(755,root,root) %{_sbindir}/eventum-svn-hook
