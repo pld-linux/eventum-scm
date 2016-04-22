@@ -3,12 +3,13 @@
 Summary:	Eventum SCM integration
 Summary(pl.UTF-8):	Integracja SCM dla Eventum
 Name:		eventum-scm
-Version:	3.0.12
-Release:	2
+Version:	3.1.0
+Release:	0.2
 License:	GPL v2+
 Group:		Networking/Utilities
-Source0:	https://github.com/eventum/scm/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	fcad6856ee5fc17cf0bce6ce2a41c890
+#Source0:	https://github.com/eventum/scm/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/eventum/scm/archive/master/%{name}-%{version}.tar.gz
+# Source0-md5:	e772d15161474c1ec1c57c61d07d1f4c
 Source1:	config.php
 Patch0:		config.patch
 URL:		https://github.com/eventum/scm
@@ -52,7 +53,8 @@ Szczegóły na temat instalacji można przeczytać pod
 </eventum/help.php?topic=scm_integration_installation>.
 
 %prep
-%setup -q -n scm-%{version}
+%setup -qc
+mv scm-*/* .
 %patch0 -p2
 
 %install
