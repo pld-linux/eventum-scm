@@ -1,0 +1,33 @@
+--- eventum-scm-3.1.0.old/eventum-cvs-hook.php	2016-04-23 00:10:10.620986912 +0300
++++ eventum-scm-3.1.0/eventum-cvs-hook.php	2016-04-23 00:06:57.000000000 +0300
+@@ -12,7 +12,7 @@
+  * that were distributed with this source code.
+  */
+ 
+-require_once __DIR__ . '/helpers.php';
++require_once '/usr/lib/eventum-scm-helpers.php';
+ 
+ $default_options = array(
+     'n' => 'cvs',
+--- eventum-scm-3.1.0.old/eventum-git-hook.php	2016-04-23 00:10:14.560929780 +0300
++++ eventum-scm-3.1.0/eventum-git-hook.php	2016-04-23 00:06:57.000000000 +0300
+@@ -12,7 +12,7 @@
+  * that were distributed with this source code.
+  */
+ 
+-require_once __DIR__ . '/helpers.php';
++require_once '/usr/lib/eventum-scm-helpers.php';
+ 
+ $default_options = array(
+     // default to $GL_REPO
+--- eventum-scm-3.1.0.old/eventum-svn-hook.php	2016-04-23 00:10:17.934214186 +0300
++++ eventum-scm-3.1.0/eventum-svn-hook.php	2016-04-23 00:06:57.000000000 +0300
+@@ -12,7 +12,7 @@
+  * that were distributed with this source code.
+  */
+ 
+-require_once __DIR__ . '/helpers.php';
++require_once '/usr/lib/eventum-scm-helpers.php';
+ 
+ $default_options = array(
+     'n' => 'svn',
