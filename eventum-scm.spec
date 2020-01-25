@@ -1,5 +1,4 @@
 %define		php_min_version 5.3.7
-%include	/usr/lib/rpm/macros.php
 Summary:	Eventum SCM integration
 Summary(pl.UTF-8):	Integracja SCM dla Eventum
 Name:		eventum-scm
