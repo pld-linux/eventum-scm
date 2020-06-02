@@ -54,6 +54,8 @@ Szczegóły na temat instalacji można przeczytać pod
 mv scm-*/* .
 %patch0 -p1
 
+%{__sed} -i -e '1 s,#!.*php,#!/usr/bin/php,' eventum-*-hook.php
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir}}
