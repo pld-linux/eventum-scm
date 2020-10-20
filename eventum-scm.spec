@@ -2,12 +2,12 @@
 Summary:	Eventum SCM integration
 Summary(pl.UTF-8):	Integracja SCM dla Eventum
 Name:		eventum-scm
-Version:	3.2.0
+Version:	3.2.1
 Release:	1
 License:	GPL v2+
 Group:		Networking/Utilities
 Source0:	https://github.com/eventum/scm/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	355bc530b44ed61ac176f9bb9fd083fa
+# Source0-md5:	2a61b49fddd045ef4600641042cf2efe
 Patch0:		paths.patch
 URL:		https://github.com/eventum/scm
 BuildRequires:	/usr/bin/php
